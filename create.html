@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html class="w-full h-full overflow-hidden" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>校园拼单搭子 · 发起拼单</title>
+<script src="https://modao.cc/agent-py/static/source/js/tailwindcss.js"></script>
+<script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.js"></script>
+</head>
+<body class="w-full h-full m-0 overflow-hidden flex items-center justify-center bg-[#E8EAEF] text-[#1C1D22] antialiased">
+<div class="relative flex h-full w-full max-w-[393px] max-h-[852px] flex-col overflow-hidden bg-[#F5F6F8] sm:rounded-[30px] sm:shadow-[0_26px_70px_rgba(23,26,35,0.25)]">
+<!-- 状态栏 -->
+<div class="flex h-[44px] shrink-0 items-end justify-between px-6 pb-[7px]">
+<span class="text-[14px] font-semibold tracking-tight">9:41</span>
+<div class="flex items-center gap-[6px]">
+<iconify-icon class="text-[15px]" icon="material-symbols:signal-cellular-alt"></iconify-icon>
+<iconify-icon class="text-[15px]" icon="material-symbols:wifi"></iconify-icon>
+<iconify-icon class="text-[16px]" icon="material-symbols:battery-full"></iconify-icon>
+</div>
+</div>
+<!-- 导航栏 -->
+<header class="flex shrink-0 items-center justify-between px-4 pb-2 pt-0.5">
+<div class="flex items-center gap-2">
+<a aria-label="返回拼单大厅" class="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-white shadow-[0_1px_5px_rgba(23,26,35,0.08)] transition active:scale-95" href="index.html">
+<iconify-icon class="text-[18px]" icon="material-symbols:arrow-back"></iconify-icon>
+</a>
+<div>
+<h1 class="text-[16px] font-bold leading-tight">发起拼单</h1>
+<p class="text-[9px] text-[#9AA0AA]">东区3栋 · 仅同楼栋可见</p>
+</div>
+</div>
+<div class="flex h-[30px] w-[86px] shrink-0 items-center justify-between rounded-full border border-black/10 bg-white px-3">
+<div class="flex items-center gap-[3px]">
+<span class="h-[3px] w-[3px] rounded-full bg-[#2A2B31]"></span>
+<span class="h-[3px] w-[3px] rounded-full bg-[#2A2B31]"></span>
+<span class="h-[3px] w-[3px] rounded-full bg-[#2A2B31]"></span>
+</div>
+<span class="flex h-[18px] w-[18px] items-center justify-center rounded-full border-[1.5px] border-[#2A2B31]">
+<span class="h-[6px] w-[6px] rounded-full border-[1.5px] border-[#2A2B31]"></span>
+</span>
+</div>
+</header>
+<!-- 表单滚动区 -->
+<main class="min-h-0 flex-1 overflow-y-auto overflow-x-hidden px-4 pb-4 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<!-- 拼单类型 -->
+<section class="mt-2 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<div class="flex items-center justify-between">
+<h2 class="text-[13px] font-semibold">拼单类型</h2>
+<span class="text-[10px] text-[#9AA0AA]">同楼栋即时拼</span>
+</div>
+<div class="mt-2.5 grid grid-cols-2 gap-2">
+<button class="rounded-[12px] border border-[#E9EAF0] bg-[#FAFAFC] py-2.5 text-[13px] font-medium text-[#6B7280] transition data-[state=active]:border-[#FF6B2C] data-[state=active]:bg-[#FFF4EC] data-[state=active]:font-semibold data-[state=active]:text-[#F4511E]" data-state="active" data-type="food" type="button">
+<span class="mr-1">🍗</span>外卖拼单
+          </button>
+<button class="rounded-[12px] border border-[#E9EAF0] bg-[#FAFAFC] py-2.5 text-[13px] font-medium text-[#6B7280] transition data-[state=active]:border-[#FF6B2C] data-[state=active]:bg-[#FFF4EC] data-[state=active]:font-semibold data-[state=active]:text-[#F4511E]" data-state="idle" data-type="market" type="button">
+<span class="mr-1">🛒</span>超市代购
+          </button>
+</div>
+</section>
+<!-- 平台 -->
+<section class="mt-3 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<div class="flex items-center justify-between">
+<h2 class="text-[13px] font-semibold">外卖平台</h2>
+<span class="text-[10px] text-[#9AA0AA]">选择下单来源</span>
+</div>
+<div class="mt-2.5 flex gap-2">
+<button class="group flex-1 rounded-[12px] border border-[#E9EAF0] bg-[#FAFAFC] px-3 py-2.5 text-left transition data-[state=active]:border-[#FFC59F] data-[state=active]:bg-[#FFF8F3]" data-platform="美团" data-state="active" type="button">
+<span class="flex items-center justify-between">
+<span class="text-[13px] font-medium group-data-[state=active]:font-semibold">美团</span>
+<span class="flex h-[16px] w-[16px] items-center justify-center rounded-full border border-[#D5D8DF] text-transparent group-data-[state=active]:border-[#FF6B2C] group-data-[state=active]:bg-[#FF6B2C] group-data-[state=active]:text-white">
+<iconify-icon class="text-[11px]" icon="material-symbols:check"></iconify-icon>
+</span>
+</span>
+<span class="mt-0.5 block text-[9px] text-[#9AA0AA]">外卖 / 买菜</span>
+</button>
+<button class="group flex-1 rounded-[12px] border border-[#E9EAF0] bg-[#FAFAFC] px-3 py-2.5 text-left transition data-[state=active]:border-[#FFC59F] data-[state=active]:bg-[#FFF8F3]" data-platform="饿了么" data-state="idle" type="button">
+<span class="flex items-center justify-between">
+<span class="text-[13px] font-medium group-data-[state=active]:font-semibold">饿了么</span>
+<span class="flex h-[16px] w-[16px] items-center justify-center rounded-full border border-[#D5D8DF] text-transparent group-data-[state=active]:border-[#FF6B2C] group-data-[state=active]:bg-[#FF6B2C] group-data-[state=active]:text-white">
+<iconify-icon class="text-[11px]" icon="material-symbols:check"></iconify-icon>
+</span>
+</span>
+<span class="mt-0.5 block text-[9px] text-[#9AA0AA]">外卖 / 商超</span>
+</button>
+</div>
+</section>
+<!-- 商品信息 -->
+<section class="mt-3 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<h2 class="text-[13px] font-semibold">商品信息</h2>
+<label class="mt-3 block text-[11px] text-[#6B7280]" for="goodsName">商品名称</label>
+<input class="mt-1.5 w-full rounded-[11px] border border-[#E9EAF0] bg-[#FAFAFC] px-3 py-2.5 text-[13px] outline-none transition placeholder:text-[#B3B8C2] focus:border-[#FFB27A] focus:bg-white" id="goodsName" maxlength="30" placeholder="如：肯德基疯狂星期四黄金鸡块" type="text"/>
+<div class="mt-2 flex gap-1.5 overflow-x-auto pb-0.5 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<button class="shrink-0 rounded-full bg-[#FFF4EC] px-2.5 py-[5px] text-[10px] text-[#C2410C]" data-name="肯德基疯狂星期四黄金鸡块" data-preset="food" type="button">肯德基鸡块</button>
+<button class="shrink-0 rounded-full bg-[#EAF9F3] px-2.5 py-[5px] text-[10px] text-[#0A7A5F]" data-name="瑞幸生椰拿铁第二杯半价" data-preset="food" type="button">瑞幸咖啡</button>
+<button class="shrink-0 rounded-full bg-[#FFF1E9] px-2.5 py-[5px] text-[10px] text-[#B91C1C]" data-name="麦当劳1+1随心配" data-preset="food" type="button">麦当劳1+1</button>
+<button class="shrink-0 rounded-full bg-[#EEF5FF] px-2.5 py-[5px] text-[10px] text-[#1D4ED8]" data-name="永辉超市麒麟西瓜拼单" data-preset="market" type="button">永辉水果</button>
+<button class="shrink-0 rounded-full bg-[#FFF8E1] px-2.5 py-[5px] text-[10px] text-[#A16207]" data-name="罗森关东煮夜宵拼单" data-preset="market" type="button">罗森夜宵</button>
+</div>
+<label class="mt-3 block text-[11px] text-[#6B7280]" for="goodsAmount">商品金额</label>
+<div class="mt-1.5 flex items-center gap-2 rounded-[11px] border border-[#E9EAF0] bg-[#FAFAFC] px-3 py-2.5 transition focus-within:border-[#FFB27A] focus-within:bg-white">
+<span class="text-[15px] font-semibold text-[#FF6B2C]">¥</span>
+<input class="min-w-0 flex-1 bg-transparent text-[14px] font-semibold outline-none placeholder:font-normal placeholder:text-[#B3B8C2]" id="goodsAmount" inputmode="decimal" min="0" placeholder="0.00" step="0.01" type="number"/>
+<span class="text-[10px] text-[#9AA0AA]">含配送费原价</span>
+</div>
+<p class="mt-1.5 flex items-center gap-1 text-[10px] text-[#9AA0AA]">
+<iconify-icon class="text-[12px]" icon="material-symbols:info"></iconify-icon>
+          同楼栋自提免配送费，成团后按人数均摊
+        </p>
+</section>
+<!-- 目标人数 -->
+<section class="mt-3 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<div class="flex items-center justify-between">
+<h2 class="text-[13px] font-semibold">目标人数</h2>
+<span class="text-[10px] text-[#9AA0AA]">1–5 人（含发起人）</span>
+</div>
+<div class="mt-2.5 flex items-center gap-3">
+<button aria-label="减少人数" class="flex h-[36px] w-[36px] items-center justify-center rounded-[11px] border border-[#E9EAF0] bg-[#FAFAFC] text-[#6B7280] transition active:bg-[#F1F2F6] disabled:opacity-35" id="minusBtn" type="button">
+<iconify-icon class="text-[18px]" icon="material-symbols:remove"></iconify-icon>
+</button>
+<div class="flex-1 text-center">
+<span class="text-[22px] font-bold leading-none text-[#FF5722]" id="memberCount">3</span>
+<span class="ml-0.5 text-[12px] text-[#6B7280]">人</span>
+<p class="mt-1 text-[10px] text-[#9AA0AA]">人越多，人均越低</p>
+</div>
+<button aria-label="增加人数" class="flex h-[36px] w-[36px] items-center justify-center rounded-[11px] border border-[#E9EAF0] bg-[#FAFAFC] text-[#6B7280] transition active:bg-[#F1F2F6] disabled:opacity-35" id="plusBtn" type="button">
+<iconify-icon class="text-[18px]" icon="material-symbols:add"></iconify-icon>
+</button>
+</div>
+<div class="mt-2 flex justify-center gap-1.5">
+<span class="h-[5px] w-[16px] rounded-full bg-[#E9EAF0]" data-dot="1"></span>
+<span class="h-[5px] w-[16px] rounded-full bg-[#FFE3D2]" data-dot="2"></span>
+<span class="h-[5px] w-[16px] rounded-full bg-[#FF6B2C]" data-dot="3"></span>
+<span class="h-[5px] w-[16px] rounded-full bg-[#E9EAF0]" data-dot="4"></span>
+<span class="h-[5px] w-[16px] rounded-full bg-[#E9EAF0]" data-dot="5"></span>
+</div>
+</section>
+<!-- 截止时间 -->
+<section class="mt-3 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<div class="flex items-center justify-between">
+<h2 class="text-[13px] font-semibold">截止时间</h2>
+<span class="text-[10px] text-[#9AA0AA]">到点未成团自动取消</span>
+</div>
+<div class="mt-2.5 grid grid-cols-4 gap-2">
+<button class="rounded-[11px] border border-[#E9EAF0] bg-[#FAFAFC] py-2 text-[11px] font-medium text-[#6B7280] transition data-[state=active]:border-[#FF6B2C] data-[state=active]:bg-[#FFF4EC] data-[state=active]:font-semibold data-[state=active]:text-[#F4511E]" data-deadline="30" data-state="active" type="button">
+            30分钟
+            <span class="mt-0.5 block text-[9px] font-normal opacity-70" data-time-label="30">--:--</span>
+</button>
+<button class="rounded-[11px] border border-[#E9EAF0] bg-[#FAFAFC] py-2 text-[11px] font-medium text-[#6B7280] transition data-[state=active]:border-[#FF6B2C] data-[state=active]:bg-[#FFF4EC] data-[state=active]:font-semibold data-[state=active]:text-[#F4511E]" data-deadline="60" data-state="idle" type="button">
+            1小时
+            <span class="mt-0.5 block text-[9px] font-normal opacity-70" data-time-label="60">--:--</span>
+</button>
+<button class="rounded-[11px] border border-[#E9EAF0] bg-[#FAFAFC] py-2 text-[11px] font-medium text-[#6B7280] transition data-[state=active]:border-[#FF6B2C] data-[state=active]:bg-[#FFF4EC] data-[state=active]:font-semibold data-[state=active]:text-[#F4511E]" data-deadline="120" data-state="idle" type="button">
+            2小时
+            <span class="mt-0.5 block text-[9px] font-normal opacity-70" data-time-label="120">--:--</span>
+</button>
+<button class="rounded-[11px] border border-[#E9EAF0] bg-[#FAFAFC] py-2 text-[11px] font-medium text-[#6B7280] transition data-[state=active]:border-[#FF6B2C] data-[state=active]:bg-[#FFF4EC] data-[state=active]:font-semibold data-[state=active]:text-[#F4511E]" data-deadline="custom" data-state="idle" type="button">
+            自定义
+            <span class="mt-0.5 block text-[9px] font-normal opacity-70">选时间</span>
+</button>
+</div>
+<div class="mt-2.5 hidden items-center gap-2 rounded-[11px] bg-[#FAFAFC] px-3 py-2" id="customTimeWrap">
+<iconify-icon class="text-[15px] text-[#FF6B2C]" icon="material-symbols:schedule"></iconify-icon>
+<span class="text-[11px] text-[#6B7280]">今天</span>
+<input class="ml-auto bg-transparent text-[12px] font-medium outline-none" id="customTime" type="time" value="20:00"/>
+</div>
+<div class="mt-2.5 flex items-center gap-1.5 text-[10px] text-[#0A7A5F]">
+<iconify-icon class="text-[13px]" icon="material-symbols:verified"></iconify-icon>
+          预计 <span class="font-semibold" id="deadlinePreview">--:--</span> 截止，到点未满员自动退款
+        </div>
+</section>
+<!-- 自提点 -->
+<section class="mt-3 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#EAF9F3]">
+<iconify-icon class="text-[16px] text-[#0A7A5F]" icon="material-symbols:location-on"></iconify-icon>
+</span>
+<div>
+<p class="text-[12px] font-semibold">自提点：东区3栋 1F 大厅</p>
+<p class="text-[10px] text-[#9AA0AA]">按地理围栏自动匹配，不可修改</p>
+</div>
+</div>
+<iconify-icon class="text-[15px] text-[#C0C4CC]" icon="material-symbols:lock"></iconify-icon>
+</div>
+</section>
+<!-- 备注 -->
+<section class="mt-3 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<label class="text-[13px] font-semibold" for="goodsNote">备注 <span class="text-[10px] font-normal text-[#9AA0AA]">（选填）</span></label>
+<textarea class="mt-2 w-full resize-none rounded-[11px] border border-[#E9EAF0] bg-[#FAFAFC] px-3 py-2.5 text-[12px] leading-relaxed outline-none transition placeholder:text-[#B3B8C2] focus:border-[#FFB27A] focus:bg-white" id="goodsNote" maxlength="60" placeholder="如：不要香菜，12:10 一起下楼取" rows="2"></textarea>
+</section>
+<!-- 预览 -->
+<section class="mt-3 overflow-hidden rounded-[18px] bg-gradient-to-br from-[#FFF4EC] to-[#FFEAE0] p-3.5 ring-1 ring-[#FFE0CC]">
+<div class="flex items-center gap-1.5 text-[12px] font-semibold text-[#C2410C]">
+<iconify-icon class="text-[15px]" icon="material-symbols:visibility"></iconify-icon>
+          拼单预览
+        </div>
+<div class="mt-2 rounded-[12px] bg-white/80 p-3">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<p class="truncate text-[13px] font-semibold" id="summaryName">待填写商品名称</p>
+<p class="mt-1 text-[10px] text-[#9AA0AA]"><span id="summaryType">外卖拼单</span> · <span id="summaryPlatform">美团</span></p>
+</div>
+<span class="shrink-0 rounded-full bg-[#FFF4EC] px-2 py-[3px] text-[10px] font-medium text-[#F4511E]" id="summaryPeople">3 人</span>
+</div>
+<div class="mt-2.5 flex items-end justify-between border-t border-dashed border-[#F0E2D8] pt-2">
+<span class="text-[10px] text-[#9AA0AA]">预计人均 <span class="text-[16px] font-bold text-[#F4511E]" id="summaryPer">¥0.00</span></span>
+<span class="text-[10px] text-[#9AA0AA]"><span id="summaryDeadline">--:--</span> 截止</span>
+</div>
+</div>
+</section>
+<p class="mt-3 mb-1 text-center text-[10px] leading-relaxed text-[#B0B5BF]">
+        发布即表示同意《楼栋拼单公约》<br/>请按时自提，爽约将影响信用分
+      </p>
+</main>
+<!-- 底部发布按钮 + Tab -->
+<div class="shrink-0 border-t border-[#E9EAF0] bg-white px-4 pb-1 pt-2.5">
+<button class="w-full rounded-[14px] bg-gradient-to-r from-[#FF8A4C] to-[#F4511E] py-3.5 text-[15px] font-semibold text-white shadow-[0_10px_22px_-10px_rgba(244,81,30,0.9)] transition active:scale-[0.985]" id="publishBtn" type="button">
+        发布拼单
+      </button>
+<p class="mt-1.5 text-center text-[9px] text-[#9AA0AA]">发布后仅东区3栋同学可见</p>
+</div>
+<nav class="shrink-0 bg-white px-3 pb-2 pt-0.5">
+<div class="flex items-center justify-around border-t border-[#F2F3F6] pt-1.5">
+<a class="flex w-[74px] flex-col items-center gap-0.5 text-[#9AA0AA]" href="index.html">
+<iconify-icon class="text-[21px]" icon="material-symbols:home"></iconify-icon>
+<span class="text-[10px]">拼单大厅</span>
+</a>
+<a class="flex w-[74px] flex-col items-center gap-0.5 text-[#FF6B2C]" href="create.html">
+<iconify-icon class="text-[21px]" icon="material-symbols:add-circle"></iconify-icon>
+<span class="text-[10px] font-semibold">发起拼单</span>
+</a>
+<a class="flex w-[74px] flex-col items-center gap-0.5 text-[#9AA0AA]" href="profile.html">
+<iconify-icon class="text-[21px]" icon="material-symbols:person"></iconify-icon>
+<span class="text-[10px]">我的</span>
+</a>
+</div>
+</nav>
+<!-- 发布成功弹窗 -->
+<div class="absolute inset-0 z-50 hidden items-center justify-center bg-black/40 px-7" id="successModal">
+<div class="w-full rounded-[22px] bg-white p-5 text-center shadow-[0_20px_60px_rgba(0,0,0,0.25)]">
+<div class="mx-auto flex h-[54px] w-[54px] items-center justify-center rounded-full bg-[#EAF9F3]">
+<iconify-icon class="text-[32px] text-[#16C098]" icon="material-symbols:check-circle"></iconify-icon>
+</div>
+<h3 class="mt-3 text-[17px] font-bold">发布成功</h3>
+<p class="mt-1.5 text-[11px] leading-relaxed text-[#6B7280]">
+<span class="font-semibold text-[#1C1D22]" id="modalName">拼单</span><br/>
+          已推送给东区3栋，<span id="modalPeople">3</span> 人成团，人均约 <span class="font-semibold text-[#F4511E]" id="modalPer">¥0.00</span>
+</p>
+<div class="mt-3 rounded-[12px] bg-[#FAFAFC] px-3 py-2 text-left text-[10px] text-[#6B7280]">
+<span class="flex items-center justify-between"><span>自提点</span><span class="font-medium text-[#1C1D22]">东区3栋 1F 大厅</span></span>
+<span class="mt-1 flex items-center justify-between"><span>截止时间</span><span class="font-medium text-[#1C1D22]"><span id="modalDeadline">--:--</span></span></span>
+</div>
+<div class="mt-4 flex gap-2">
+<button class="flex-1 rounded-[12px] border border-[#E9EAF0] bg-white py-2.5 text-[13px] font-medium text-[#6B7280]" id="modalClose" type="button">继续修改</button>
+<a class="flex-1 rounded-[12px] bg-[#FF6B2C] py-2.5 text-[13px] font-semibold text-white" href="detail.html">查看拼单</a>
+</div>
+</div>
+</div>
+<!-- 提示条 -->
+<div class="pointer-events-none absolute bottom-[150px] left-1/2 z-[60] hidden -translate-x-1/2 whitespace-nowrap rounded-full bg-[#1C1D22]/90 px-4 py-2 text-[11px] text-white" id="toast"></div>
+</div>
+<script>
+    (function () {
+      const typeButtons = Array.from(document.querySelectorAll('[data-type]'));
+      const platformButtons = Array.from(document.querySelectorAll('[data-platform]'));
+      const presets = Array.from(document.querySelectorAll('[data-preset]'));
+      const deadlineButtons = Array.from(document.querySelectorAll('[data-deadline]'));
+      const customTimeWrap = document.getElementById('customTimeWrap');
+      const customTime = document.getElementById('customTime');
+      const nameInput = document.getElementById('goodsName');
+      const amountInput = document.getElementById('goodsAmount');
+      const memberCount = document.getElementById('memberCount');
+      const minusBtn = document.getElementById('minusBtn');
+      const plusBtn = document.getElementById('plusBtn');
+      const dots = Array.from(document.querySelectorAll('[data-dot]'));
+      const summaryName = document.getElementById('summaryName');
+      const summaryType = document.getElementById('summaryType');
+      const summaryPlatform = document.getElementById('summaryPlatform');
+      const summaryPeople = document.getElementById('summaryPeople');
+      const summaryPer = document.getElementById('summaryPer');
+      const summaryDeadline = document.getElementById('summaryDeadline');
+      const deadlinePreview = document.getElementById('deadlinePreview');
+      const publishBtn = document.getElementById('publishBtn');
+      const successModal = document.getElementById('successModal');
+      const modalClose = document.getElementById('modalClose');
+      const toast = document.getElementById('toast');
+
+      const state = {
+        type: 'food',
+        platform: '美团',
+        members: 3,
+        deadline: '30'
+      };
+
+      let toastTimer = null;
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.remove('hidden');
+        if (toastTimer) window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(function () {
+          toast.classList.add('hidden');
+        }, 1800);
+      }
+
+      function pad(value) {
+        return value < 10 ? '0' + value : String(value);
+      }
+
+      function formatTime(date) {
+        return pad(date.getHours()) + ':' + pad(date.getMinutes());
+      }
+
+      function computeDeadline() {
+        if (state.deadline === 'custom') {
+          return customTime.value || '20:00';
+        }
+        const minutes = Number(state.deadline);
+        return formatTime(new Date(Date.now() + minutes * 60000));
+      }
+
+      function renderDeadlineLabels() {
+        [30, 60, 120].forEach(function (minutes) {
+          const label = document.querySelector('[data-time-label="' + minutes + '"]');
+          if (label) label.textContent = formatTime(new Date(Date.now() + minutes * 60000));
+        });
+      }
+
+      function renderMembers() {
+        memberCount.textContent = String(state.members);
+        minusBtn.disabled = state.members <= 1;
+        plusBtn.disabled = state.members >= 5;
+        dots.forEach(function (dot) {
+          const value = Number(dot.dataset.dot);
+          dot.classList.toggle('bg-[#FF6B2C]', value === state.members);
+          dot.classList.toggle('bg-[#FFE3D2]', value < state.members);
+          dot.classList.toggle('bg-[#E9EAF0]', value > state.members);
+        });
+        renderSummary();
+      }
+
+      function renderSummary() {
+        const amount = parseFloat(amountInput.value);
+        const name = nameInput.value.trim();
+        const per = amount > 0 ? amount / state.members : 0;
+        const deadlineText = computeDeadline();
+
+        summaryName.textContent = name || '待填写商品名称';
+        summaryType.textContent = state.type === 'food' ? '外卖拼单' : '超市代购';
+        summaryPlatform.textContent = state.platform;
+        summaryPeople.textContent = state.members + ' 人';
+        summaryPer.textContent = '¥' + per.toFixed(2);
+        summaryDeadline.textContent = deadlineText;
+        deadlinePreview.textContent = deadlineText;
+      }
+
+      typeButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          state.type = button.dataset.type;
+          typeButtons.forEach(function (item) {
+            item.dataset.state = item === button ? 'active' : 'idle';
+          });
+          nameInput.placeholder = state.type === 'food'
+            ? '如：肯德基疯狂星期四黄金鸡块'
+            : '如：永辉超市麒麟西瓜拼单';
+          renderSummary();
+        });
+      });
+
+      platformButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          state.platform = button.dataset.platform;
+          platformButtons.forEach(function (item) {
+            item.dataset.state = item === button ? 'active' : 'idle';
+          });
+          renderSummary();
+        });
+      });
+
+      presets.forEach(function (button) {
+        button.addEventListener('click', function () {
+          nameInput.value = button.dataset.name;
+          const targetType = button.dataset.preset;
+          if (targetType !== state.type) {
+            state.type = targetType;
+            typeButtons.forEach(function (item) {
+              item.dataset.state = item.dataset.type === targetType ? 'active' : 'idle';
+            });
+          }
+          renderSummary();
+        });
+      });
+
+      deadlineButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          state.deadline = button.dataset.deadline;
+          deadlineButtons.forEach(function (item) {
+            item.dataset.state = item === button ? 'active' : 'idle';
+          });
+          if (state.deadline === 'custom') {
+            customTimeWrap.classList.remove('hidden');
+            customTimeWrap.classList.add('flex');
+          } else {
+            customTimeWrap.classList.add('hidden');
+            customTimeWrap.classList.remove('flex');
+          }
+          renderSummary();
+        });
+      });
+
+      minusBtn.addEventListener('click', function () {
+        if (state.members > 1) {
+          state.members -= 1;
+          renderMembers();
+        }
+      });
+
+      plusBtn.addEventListener('click', function () {
+        if (state.members < 5) {
+          state.members += 1;
+          renderMembers();
+        }
+      });
+
+      nameInput.addEventListener('input', renderSummary);
+      amountInput.addEventListener('input', renderSummary);
+      customTime.addEventListener('input', renderSummary);
+
+      publishBtn.addEventListener('click', function () {
+        const name = nameInput.value.trim();
+        const amount = parseFloat(amountInput.value);
+        if (!name) {
+          showToast('请先填写商品名称');
+          nameInput.focus();
+          return;
+        }
+        if (!amount || amount <= 0) {
+          showToast('请填写正确的商品金额');
+          amountInput.focus();
+          return;
+        }
+        renderSummary();
+        document.getElementById('modalName').textContent = name;
+        document.getElementById('modalPeople').textContent = String(state.members);
+        document.getElementById('modalPer').textContent = '¥' + (amount / state.members).toFixed(2);
+        document.getElementById('modalDeadline').textContent = computeDeadline();
+        successModal.classList.remove('hidden');
+        successModal.classList.add('flex');
+      });
+
+      modalClose.addEventListener('click', function () {
+        successModal.classList.add('hidden');
+        successModal.classList.remove('flex');
+      });
+
+      successModal.addEventListener('click', function (event) {
+        if (event.target === successModal) {
+          successModal.classList.add('hidden');
+          successModal.classList.remove('flex');
+        }
+      });
+
+      renderDeadlineLabels();
+      renderMembers();
+    })();
+  </script>
+</body>
+</html>

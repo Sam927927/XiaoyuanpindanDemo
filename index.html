@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="w-full h-full overflow-hidden" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>校园拼单搭子 · 拼单大厅</title>
+<script src="https://modao.cc/agent-py/static/source/js/tailwindcss.js"></script>
+<script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.js"></script>
+</head>
+<body class="w-full h-full m-0 overflow-hidden flex items-center justify-center bg-[#E8EAEF] text-[#1C1D22] antialiased">
+<div class="relative flex h-full w-full max-w-[393px] max-h-[852px] flex-col overflow-hidden bg-[#F5F6F8] sm:rounded-[30px] sm:shadow-[0_26px_70px_rgba(23,26,35,0.25)]">
+<!-- 状态栏 -->
+<div class="flex h-[44px] shrink-0 items-end justify-between px-6 pb-[7px]">
+<span class="text-[14px] font-semibold tracking-tight">9:41</span>
+<div class="flex items-center gap-[6px] text-[#1C1D22]">
+<iconify-icon class="text-[15px]" icon="material-symbols:signal-cellular-alt"></iconify-icon>
+<iconify-icon class="text-[15px]" icon="material-symbols:wifi"></iconify-icon>
+<iconify-icon class="text-[16px]" icon="material-symbols:battery-full"></iconify-icon>
+</div>
+</div>
+<!-- 顶部导航：定位 / 搜索 / 微信胶囊 -->
+<header class="shrink-0 px-4">
+<div class="flex items-center justify-between gap-2">
+<button class="flex items-center gap-1 active:opacity-70" type="button">
+<span class="text-[15px] leading-none">📍</span>
+<span class="text-[17px] font-bold tracking-tight">东区3栋</span>
+<iconify-icon class="text-[18px] text-[#7A7F8A]" icon="material-symbols:keyboard-arrow-down"></iconify-icon>
+</button>
+<div class="flex items-center gap-2">
+<button aria-label="搜索拼单" class="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-white shadow-[0_1px_5px_rgba(23,26,35,0.08)] transition active:scale-95" id="searchToggle" type="button">
+<iconify-icon class="text-[18px] text-[#3A3C44]" icon="material-symbols:search"></iconify-icon>
+</button>
+<div class="flex h-[30px] w-[86px] shrink-0 items-center justify-between rounded-full border border-black/10 bg-white px-3">
+<div class="flex items-center gap-[3px]">
+<span class="h-[3px] w-[3px] rounded-full bg-[#2A2B31]"></span>
+<span class="h-[3px] w-[3px] rounded-full bg-[#2A2B31]"></span>
+<span class="h-[3px] w-[3px] rounded-full bg-[#2A2B31]"></span>
+</div>
+<span class="flex h-[18px] w-[18px] items-center justify-center rounded-full border-[1.5px] border-[#2A2B31]">
+<span class="h-[6px] w-[6px] rounded-full border-[1.5px] border-[#2A2B31]"></span>
+</span>
+</div>
+</div>
+</div>
+<div class="mt-1 flex items-center gap-1.5 text-[10px] text-[#9AA0AA]">
+<span class="h-[5px] w-[5px] rounded-full bg-[#16C098]"></span>
+        地理围栏已开启 · 仅东区3栋同学可见
+      </div>
+<!-- 搜索栏（默认隐藏） -->
+<div class="hidden pt-2" id="searchBar">
+<div class="flex items-center gap-2 rounded-[12px] border border-[#FFD9C2] bg-white px-3 py-2 shadow-[0_2px_10px_rgba(255,107,44,0.08)]">
+<iconify-icon class="text-[17px] text-[#FF6B2C]" icon="material-symbols:search"></iconify-icon>
+<input class="min-w-0 flex-1 bg-transparent text-[12px] outline-none placeholder:text-[#B3B8C2]" id="searchInput" placeholder="搜索拼单 / 店铺 / 商品" type="text"/>
+<button class="text-[11px] text-[#9AA0AA]" id="searchCancel" type="button">取消</button>
+</div>
+</div>
+</header>
+<!-- 主内容滚动区 -->
+<main class="min-h-0 flex-1 overflow-y-auto overflow-x-hidden px-4 pb-24 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<!-- 地理围栏横幅 -->
+<div class="relative mt-2 overflow-hidden rounded-[20px] bg-gradient-to-br from-[#FF8A4C] via-[#FF6B2C] to-[#F4511E] p-4 text-white shadow-[0_10px_24px_-12px_rgba(244,81,30,0.85)]">
+<span class="pointer-events-none absolute -right-6 -top-8 h-[120px] w-[120px] rounded-full bg-white/10"></span>
+<span class="pointer-events-none absolute -bottom-10 right-10 h-[90px] w-[90px] rounded-full bg-white/[0.08]"></span>
+<span class="pointer-events-none absolute right-3 top-3 text-[52px] leading-none opacity-25">🥡</span>
+<div class="relative">
+<div class="flex items-center gap-1.5">
+<span class="rounded-full bg-white/25 px-2 py-[3px] text-[10px] font-medium">同楼栋拼单</span>
+<span class="rounded-full bg-[#16C098] px-2 py-[3px] text-[10px] font-medium">免配送费</span>
+</div>
+<h1 class="mt-2 text-[20px] font-bold leading-[1.25]">楼里有人拼单，<br/>一起省下配送费</h1>
+<div class="mt-3 flex items-center gap-4 text-[10px] text-white/85">
+<span class="flex items-center gap-1"><iconify-icon class="text-[13px]" icon="material-symbols:bolt"></iconify-icon>6 单正在拼</span>
+<span class="flex items-center gap-1"><iconify-icon class="text-[13px]" icon="material-symbols:savings"></iconify-icon>今日楼栋已省 ¥128</span>
+</div>
+</div>
+</div>
+<!-- 分类标签 -->
+<div class="mt-3 flex gap-2 overflow-x-auto pb-0.5 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<button class="shrink-0 rounded-full bg-white px-3.5 py-[7px] text-[12px] font-medium text-[#6B7280] shadow-[0_1px_4px_rgba(23,26,35,0.05)] transition data-[state=active]:bg-[#FF6B2C] data-[state=active]:font-semibold data-[state=active]:text-white data-[state=active]:shadow-[0_4px_12px_rgba(255,107,44,0.32)]" data-filter="all" data-state="active" type="button">全部 <span class="text-[10px] opacity-70">6</span></button>
+<button class="shrink-0 rounded-full bg-white px-3.5 py-[7px] text-[12px] font-medium text-[#6B7280] shadow-[0_1px_4px_rgba(23,26,35,0.05)] transition data-[state=active]:bg-[#FF6B2C] data-[state=active]:font-semibold data-[state=active]:text-white data-[state=active]:shadow-[0_4px_12px_rgba(255,107,44,0.32)]" data-filter="food" data-state="idle" type="button">外卖拼单 <span class="text-[10px] opacity-70">3</span></button>
+<button class="shrink-0 rounded-full bg-white px-3.5 py-[7px] text-[12px] font-medium text-[#6B7280] shadow-[0_1px_4px_rgba(23,26,35,0.05)] transition data-[state=active]:bg-[#FF6B2C] data-[state=active]:font-semibold data-[state=active]:text-white data-[state=active]:shadow-[0_4px_12px_rgba(255,107,44,0.32)]" data-filter="market" data-state="idle" type="button">超市代购 <span class="text-[10px] opacity-70">2</span></button>
+<button class="shrink-0 rounded-full bg-white px-3.5 py-[7px] text-[12px] font-medium text-[#6B7280] shadow-[0_1px_4px_rgba(23,26,35,0.05)] transition data-[state=active]:bg-[#FF6B2C] data-[state=active]:font-semibold data-[state=active]:text-white data-[state=active]:shadow-[0_4px_12px_rgba(255,107,44,0.32)]" data-filter="errand" data-state="idle" type="button">跑腿 <span class="text-[10px] opacity-70">1</span></button>
+</div>
+<!-- 列表标题 -->
+<div class="mt-3.5 flex items-center justify-between">
+<h2 class="flex items-baseline gap-1.5 text-[15px] font-bold">正在拼单
+          <span class="text-[10px] font-normal text-[#9AA0AA]"><span id="resultCount">6</span> 单</span>
+</h2>
+<span class="flex items-center gap-0.5 text-[10px] text-[#9AA0AA]">
+<iconify-icon class="text-[12px]" icon="material-symbols:my-location"></iconify-icon>距你 50m 内
+        </span>
+</div>
+<!-- 双列瀑布流 -->
+<div class="mt-2 columns-2 gap-2.5">
+<!-- 卡片 1：肯德基 -->
+<article class="mb-2.5 break-inside-avoid overflow-hidden rounded-[16px] bg-white shadow-[0_2px_10px_rgba(23,26,35,0.05)] ring-1 ring-black/[0.03]" data-card="" data-cat="food" data-title="肯德基疯狂星期四 黄金鸡块">
+<div class="relative h-[96px] bg-gradient-to-br from-[#FFE9CC] via-[#FFD9A8] to-[#FFC077]">
+<span class="absolute left-2 top-2 rounded-full bg-white/90 px-2 py-[3px] text-[9px] font-semibold text-[#C2410C]">外卖拼单</span>
+<span class="absolute right-2 top-2 rounded-full bg-[#FF5722] px-2 py-[3px] text-[9px] font-semibold text-white" id="kfcBadge">还差1人</span>
+<div class="flex h-full items-center justify-center">
+<span class="text-[42px] leading-none drop-shadow-sm">🍗</span>
+</div>
+</div>
+<div class="p-2.5">
+<h3 class="text-[13px] font-semibold leading-[1.35]">肯德基疯狂星期四<br/>黄金鸡块(20块)</h3>
+<div class="mt-1.5 flex items-center gap-1.5">
+<span class="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#FFB27A] to-[#FF6B2C] text-[9px] font-bold text-white">林</span>
+<span class="truncate text-[10px] text-[#6B7280]">林小满 · 3栋12F</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-[10px]">
+<span class="text-[#9AA0AA]">已拼 <span class="font-semibold text-[#FF5722]" id="kfcCount">2</span>/3 人</span>
+<span class="flex items-center gap-0.5 text-[#9AA0AA]">
+<iconify-icon class="text-[11px]" icon="material-symbols:schedule"></iconify-icon>12:00前
+              </span>
+</div>
+<div class="mt-1.5 h-[5px] overflow-hidden rounded-full bg-[#F1F2F6]">
+<div class="h-full w-2/3 rounded-full bg-gradient-to-r from-[#FFB27A] to-[#FF6B2C] data-[joined=true]:w-full" data-joined="false" id="kfcBar"></div>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-[11px] font-bold text-[#FF5722]">¥9.97<span class="text-[9px] font-normal text-[#9AA0AA]">/人</span></span>
+<a class="rounded-full bg-[#FF6B2C] px-2.5 py-[5px] text-[10px] font-semibold text-white transition active:scale-95 data-[joined=true]:bg-[#16C098]" data-joined="false" href="detail.html" id="kfcBtn">去拼单</a>
+</div>
+</div>
+</article>
+<!-- 卡片 2：瑞幸 -->
+<article class="mb-2.5 break-inside-avoid overflow-hidden rounded-[16px] bg-white shadow-[0_2px_10px_rgba(23,26,35,0.05)] ring-1 ring-black/[0.03]" data-card="" data-cat="food" data-title="瑞幸生椰拿铁 第二杯半价">
+<div class="relative h-[80px] bg-gradient-to-br from-[#DFF7EC] via-[#C4EFDE] to-[#A6E6CE]">
+<span class="absolute left-2 top-2 rounded-full bg-white/90 px-2 py-[3px] text-[9px] font-semibold text-[#0A7A5F]">外卖拼单</span>
+<div class="flex h-full items-center justify-center">
+<span class="text-[38px] leading-none drop-shadow-sm">☕</span>
+</div>
+</div>
+<div class="p-2.5">
+<h3 class="text-[13px] font-semibold leading-[1.35]">瑞幸生椰拿铁<br/>第二杯半价</h3>
+<div class="mt-1.5 flex items-center gap-1.5">
+<span class="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#5FD7B4] to-[#10A981] text-[9px] font-bold text-white">周</span>
+<span class="truncate text-[10px] text-[#6B7280]">周雨森 · 3栋7F</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-[10px]">
+<span class="text-[#9AA0AA]">已拼 <span class="font-semibold text-[#FF5722]">3</span>/4 人</span>
+<span class="flex items-center gap-0.5 text-[#9AA0AA]">
+<iconify-icon class="text-[11px]" icon="material-symbols:schedule"></iconify-icon>18:30前
+              </span>
+</div>
+<div class="mt-1.5 h-[5px] overflow-hidden rounded-full bg-[#F1F2F6]">
+<div class="h-full w-3/4 rounded-full bg-gradient-to-r from-[#FFB27A] to-[#FF6B2C]"></div>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-[11px] font-bold text-[#FF5722]">¥14.50<span class="text-[9px] font-normal text-[#9AA0AA]">/人</span></span>
+<a class="rounded-full bg-[#FF6B2C] px-2.5 py-[5px] text-[10px] font-semibold text-white transition active:scale-95" href="detail.html">去拼单</a>
+</div>
+</div>
+</article>
+<!-- 卡片 3：永辉 -->
+<article class="mb-2.5 break-inside-avoid overflow-hidden rounded-[16px] bg-white shadow-[0_2px_10px_rgba(23,26,35,0.05)] ring-1 ring-black/[0.03]" data-card="" data-cat="market" data-title="永辉超市 麒麟西瓜拼单">
+<div class="relative h-[92px] bg-gradient-to-br from-[#E4F0FF] via-[#CDE1FF] to-[#AECBFB]">
+<span class="absolute left-2 top-2 rounded-full bg-white/90 px-2 py-[3px] text-[9px] font-semibold text-[#1D4ED8]">超市代购</span>
+<div class="flex h-full items-center justify-center">
+<span class="text-[40px] leading-none drop-shadow-sm">🍉</span>
+</div>
+</div>
+<div class="p-2.5">
+<h3 class="text-[13px] font-semibold leading-[1.35]">永辉超市<br/>麒麟西瓜拼单</h3>
+<div class="mt-1.5 flex items-center gap-1.5">
+<span class="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#7FB6FF] to-[#2F6FE4] text-[9px] font-bold text-white">陈</span>
+<span class="truncate text-[10px] text-[#6B7280]">陈一诺 · 3栋12F</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-[10px]">
+<span class="text-[#9AA0AA]">已拼 <span class="font-semibold text-[#FF5722]">4</span>/5 人</span>
+<span class="flex items-center gap-0.5 text-[#9AA0AA]">
+<iconify-icon class="text-[11px]" icon="material-symbols:schedule"></iconify-icon>20:00前
+              </span>
+</div>
+<div class="mt-1.5 h-[5px] overflow-hidden rounded-full bg-[#F1F2F6]">
+<div class="h-full w-4/5 rounded-full bg-gradient-to-r from-[#FFB27A] to-[#FF6B2C]"></div>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-[11px] font-bold text-[#FF5722]">¥15.80<span class="text-[9px] font-normal text-[#9AA0AA]">/人</span></span>
+<a class="rounded-full bg-[#FF6B2C] px-2.5 py-[5px] text-[10px] font-semibold text-white transition active:scale-95" href="detail.html">去拼单</a>
+</div>
+</div>
+</article>
+<!-- 卡片 4：跑腿 -->
+<article class="mb-2.5 break-inside-avoid overflow-hidden rounded-[16px] bg-white shadow-[0_2px_10px_rgba(23,26,35,0.05)] ring-1 ring-black/[0.03]" data-card="" data-cat="errand" data-title="帮忙取快递送到 12F 门口">
+<div class="relative h-[76px] bg-gradient-to-br from-[#EEEAFF] via-[#DCD5FF] to-[#C5BAFC]">
+<span class="absolute left-2 top-2 rounded-full bg-white/90 px-2 py-[3px] text-[9px] font-semibold text-[#5B3FD6]">跑腿</span>
+<div class="flex h-full items-center justify-center">
+<span class="text-[36px] leading-none drop-shadow-sm">📦</span>
+</div>
+</div>
+<div class="p-2.5">
+<h3 class="text-[13px] font-semibold leading-[1.35]">帮忙取快递<br/>送到 12F 门口</h3>
+<div class="mt-1.5 flex items-center gap-1.5">
+<span class="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#B9A6FF] to-[#6C4BE8] text-[9px] font-bold text-white">赵</span>
+<span class="truncate text-[10px] text-[#6B7280]">赵梓航 · 3栋12F</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-[10px]">
+<span class="text-[#9AA0AA]">已拼 <span class="font-semibold text-[#FF5722]">1</span>/2 人</span>
+<span class="flex items-center gap-0.5 text-[#9AA0AA]">
+<iconify-icon class="text-[11px]" icon="material-symbols:schedule"></iconify-icon>15:00前
+              </span>
+</div>
+<div class="mt-1.5 h-[5px] overflow-hidden rounded-full bg-[#F1F2F6]">
+<div class="h-full w-1/2 rounded-full bg-gradient-to-r from-[#FFB27A] to-[#FF6B2C]"></div>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-[11px] font-bold text-[#FF5722]">¥3.00<span class="text-[9px] font-normal text-[#9AA0AA]">/人</span></span>
+<a class="rounded-full bg-[#FF6B2C] px-2.5 py-[5px] text-[10px] font-semibold text-white transition active:scale-95" href="detail.html">去拼单</a>
+</div>
+</div>
+</article>
+<!-- 卡片 5：罗森 -->
+<article class="mb-2.5 break-inside-avoid overflow-hidden rounded-[16px] bg-white shadow-[0_2px_10px_rgba(23,26,35,0.05)] ring-1 ring-black/[0.03]" data-card="" data-cat="market" data-title="罗森关东煮 夜宵拼单">
+<div class="relative h-[84px] bg-gradient-to-br from-[#FFF6D9] via-[#FFEDB5] to-[#FFE08A]">
+<span class="absolute left-2 top-2 rounded-full bg-white/90 px-2 py-[3px] text-[9px] font-semibold text-[#A16207]">超市代购</span>
+<div class="flex h-full items-center justify-center">
+<span class="text-[38px] leading-none drop-shadow-sm">🍢</span>
+</div>
+</div>
+<div class="p-2.5">
+<h3 class="text-[13px] font-semibold leading-[1.35]">罗森关东煮<br/>夜宵拼单</h3>
+<div class="mt-1.5 flex items-center gap-1.5">
+<span class="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#FFD166] to-[#E9A208] text-[9px] font-bold text-white">吴</span>
+<span class="truncate text-[10px] text-[#6B7280]">吴星野 · 3栋9F</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-[10px]">
+<span class="text-[#9AA0AA]">已拼 <span class="font-semibold text-[#FF5722]">2</span>/3 人</span>
+<span class="flex items-center gap-0.5 text-[#9AA0AA]">
+<iconify-icon class="text-[11px]" icon="material-symbols:schedule"></iconify-icon>22:30前
+              </span>
+</div>
+<div class="mt-1.5 h-[5px] overflow-hidden rounded-full bg-[#F1F2F6]">
+<div class="h-full w-2/3 rounded-full bg-gradient-to-r from-[#FFB27A] to-[#FF6B2C]"></div>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-[11px] font-bold text-[#FF5722]">¥9.00<span class="text-[9px] font-normal text-[#9AA0AA]">/人</span></span>
+<a class="rounded-full bg-[#FF6B2C] px-2.5 py-[5px] text-[10px] font-semibold text-white transition active:scale-95" href="detail.html">去拼单</a>
+</div>
+</div>
+</article>
+<!-- 卡片 6：麦当劳 -->
+<article class="mb-2.5 break-inside-avoid overflow-hidden rounded-[16px] bg-white shadow-[0_2px_10px_rgba(23,26,35,0.05)] ring-1 ring-black/[0.03]" data-card="" data-cat="food" data-title="麦当劳 1+1 随心配">
+<div class="relative h-[88px] bg-gradient-to-br from-[#FFE5D8] via-[#FFD0B8] to-[#FFB08C]">
+<span class="absolute left-2 top-2 rounded-full bg-white/90 px-2 py-[3px] text-[9px] font-semibold text-[#B91C1C]">外卖拼单</span>
+<div class="flex h-full items-center justify-center">
+<span class="text-[38px] leading-none drop-shadow-sm">🍔</span>
+</div>
+</div>
+<div class="p-2.5">
+<h3 class="text-[13px] font-semibold leading-[1.35]">麦当劳<br/>1+1 随心配</h3>
+<div class="mt-1.5 flex items-center gap-1.5">
+<span class="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#FF9C7A] to-[#E8452B] text-[9px] font-bold text-white">李</span>
+<span class="truncate text-[10px] text-[#6B7280]">李知遥 · 3栋5F</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-[10px]">
+<span class="text-[#9AA0AA]">已拼 <span class="font-semibold text-[#FF5722]">1</span>/2 人</span>
+<span class="flex items-center gap-0.5 text-[#9AA0AA]">
+<iconify-icon class="text-[11px]" icon="material-symbols:schedule"></iconify-icon>13:20前
+              </span>
+</div>
+<div class="mt-1.5 h-[5px] overflow-hidden rounded-full bg-[#F1F2F6]">
+<div class="h-full w-1/2 rounded-full bg-gradient-to-r from-[#FFB27A] to-[#FF6B2C]"></div>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-[11px] font-bold text-[#FF5722]">¥12.90<span class="text-[9px] font-normal text-[#9AA0AA]">/人</span></span>
+<a class="rounded-full bg-[#FF6B2C] px-2.5 py-[5px] text-[10px] font-semibold text-white transition active:scale-95" href="detail.html">去拼单</a>
+</div>
+</div>
+</article>
+</div>
+<!-- 空状态 -->
+<div class="hidden rounded-[16px] bg-white px-4 py-10 text-center shadow-[0_2px_10px_rgba(23,26,35,0.05)]" id="emptyState">
+<iconify-icon class="text-[34px] text-[#C7CBD3]" icon="material-symbols:search-off"></iconify-icon>
+<p class="mt-2 text-[13px] font-semibold">没有找到匹配的拼单</p>
+<p class="mt-1 text-[11px] text-[#9AA0AA]">换个分类或关键词试试，也可以自己发一单</p>
+</div>
+<div class="mt-3 flex items-center justify-center gap-1 text-[10px] text-[#B0B5BF]">
+<iconify-icon class="text-[12px]" icon="material-symbols:verified"></iconify-icon>
+        仅同楼栋可参与 · 成团后到 1F 大厅自提
+      </div>
+</main>
+<!-- 悬浮发起按钮 -->
+<a class="absolute bottom-[78px] right-4 z-20 flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#FF8A4C] to-[#F4511E] py-3 pl-3 pr-4 text-white shadow-[0_12px_26px_-8px_rgba(244,81,30,0.75)] transition active:scale-95" href="create.html">
+<span class="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-white/20">
+<iconify-icon class="text-[20px]" icon="material-symbols:add"></iconify-icon>
+</span>
+<span class="text-[13px] font-semibold">发起拼单</span>
+</a>
+<!-- 底部 Tab -->
+<nav class="shrink-0 border-t border-[#E9EAF0] bg-white px-3 pb-2 pt-1.5">
+<div class="flex items-center justify-around">
+<a class="flex w-[74px] flex-col items-center gap-0.5 text-[#FF6B2C]" href="home.html">
+<iconify-icon class="text-[22px]" icon="material-symbols:home"></iconify-icon>
+<span class="text-[10px] font-semibold">拼单大厅</span>
+</a>
+<a class="flex w-[74px] flex-col items-center gap-0.5 text-[#9AA0AA]" href="create.html">
+<iconify-icon class="text-[22px]" icon="material-symbols:add-circle"></iconify-icon>
+<span class="text-[10px]">发起拼单</span>
+</a>
+<a class="flex w-[74px] flex-col items-center gap-0.5 text-[#9AA0AA]" href="profile.html">
+<iconify-icon class="text-[22px]" icon="material-symbols:person"></iconify-icon>
+<span class="text-[10px]">我的</span>
+</a>
+</div>
+</nav>
+</div>
+<script>
+    (function () {
+      const cards = Array.from(document.querySelectorAll('[data-card]'));
+      const chips = Array.from(document.querySelectorAll('[data-filter]'));
+      const resultCount = document.getElementById('resultCount');
+      const emptyState = document.getElementById('emptyState');
+      const searchToggle = document.getElementById('searchToggle');
+      const searchBar = document.getElementById('searchBar');
+      const searchInput = document.getElementById('searchInput');
+      const searchCancel = document.getElementById('searchCancel');
+
+      let activeCat = 'all';
+      let keyword = '';
+
+      function applyFilters() {
+        let visible = 0;
+        cards.forEach(function (card) {
+          const matchCat = activeCat === 'all' || card.dataset.cat === activeCat;
+          const matchText = !keyword || card.dataset.title.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
+          const show = matchCat && matchText;
+          card.classList.toggle('hidden', !show);
+          if (show) visible += 1;
+        });
+        resultCount.textContent = String(visible);
+        emptyState.classList.toggle('hidden', visible !== 0);
+      }
+
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          activeCat = chip.dataset.filter;
+          chips.forEach(function (item) {
+            item.dataset.state = item === chip ? 'active' : 'idle';
+          });
+          applyFilters();
+        });
+      });
+
+      searchToggle.addEventListener('click', function () {
+        searchBar.classList.toggle('hidden');
+        if (!searchBar.classList.contains('hidden')) {
+          searchInput.focus();
+        }
+      });
+
+      searchInput.addEventListener('input', function () {
+        keyword = searchInput.value.trim();
+        applyFilters();
+      });
+
+      searchCancel.addEventListener('click', function () {
+        searchInput.value = '';
+        keyword = '';
+        applyFilters();
+        searchBar.classList.add('hidden');
+      });
+
+      // 同步详情页加入结果
+      let joined = false;
+      try {
+        joined = localStorage.getItem('cgb_kfc_joined') === '1';
+      } catch (error) {
+        joined = false;
+      }
+
+      if (joined) {
+        const count = document.getElementById('kfcCount');
+        const bar = document.getElementById('kfcBar');
+        const btn = document.getElementById('kfcBtn');
+        const badge = document.getElementById('kfcBadge');
+        if (count) count.textContent = '3';
+        if (bar) bar.dataset.joined = 'true';
+        if (btn) {
+          btn.dataset.joined = 'true';
+          btn.textContent = '已成团';
+        }
+        if (badge) badge.textContent = '已成团';
+      }
+    })();
+  </script>
+<script>
+    // 页面加载时，从浏览器口袋里去拿名字
+    window.onload = function() {
+        var myName = localStorage.getItem('myNickname');
+        if (myName) {
+            document.getElementById('show-name').innerText = myName;
+        }
+    }
+</script>
+</body>
+<div style="position: fixed; top: 10px; right: 15px; z-index: 9999; background: rgba(255,122,69,0.9); color: white; padding: 5px 12px; border-radius: 15px; font-size: 13px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    欢迎，<span id="show-name">同学</span>
+</div>
+</html>

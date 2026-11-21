@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="w-full h-full overflow-hidden" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>校园拼单搭子 · 拼单详情</title>
+<script src="https://modao.cc/agent-py/static/source/js/tailwindcss.js"></script>
+<script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.js"></script>
+</head>
+<body class="w-full h-full m-0 overflow-hidden flex items-center justify-center bg-[#E8EAEF] text-[#1C1D22] antialiased">
+<div class="relative flex h-full w-full max-w-[393px] max-h-[852px] flex-col overflow-hidden bg-[#F5F6F8] sm:rounded-[30px] sm:shadow-[0_26px_70px_rgba(23,26,35,0.25)]">
+<!-- 状态栏 -->
+<div class="flex h-[44px] shrink-0 items-end justify-between px-6 pb-[7px]">
+<span class="text-[14px] font-semibold tracking-tight">9:41</span>
+<div class="flex items-center gap-[6px]">
+<iconify-icon class="text-[15px]" icon="material-symbols:signal-cellular-alt"></iconify-icon>
+<iconify-icon class="text-[15px]" icon="material-symbols:wifi"></iconify-icon>
+<iconify-icon class="text-[16px]" icon="material-symbols:battery-full"></iconify-icon>
+</div>
+</div>
+<!-- 导航栏 -->
+<header class="flex shrink-0 items-center justify-between px-4 pb-1">
+<div class="flex items-center gap-2">
+<a aria-label="返回拼单大厅" class="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-white shadow-[0_1px_5px_rgba(23,26,35,0.08)] transition active:scale-95" href="index.html">
+<iconify-icon class="text-[18px]" icon="material-symbols:arrow-back"></iconify-icon>
+</a>
+<h1 class="text-[16px] font-bold">拼单详情</h1>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="分享拼单" class="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-white shadow-[0_1px_5px_rgba(23,26,35,0.08)] active:opacity-70" type="button">
+<iconify-icon class="text-[16px] text-[#3A3C44]" icon="material-symbols:share"></iconify-icon>
+</button>
+<div class="flex h-[30px] w-[86px] shrink-0 items-center justify-between rounded-full border border-black/10 bg-white px-3">
+<div class="flex items-center gap-[3px]">
+<span class="h-[3px] w-[3px] rounded-full bg-[#2A2B31]"></span>
+<span class="h-[3px] w-[3px] rounded-full bg-[#2A2B31]"></span>
+<span class="h-[3px] w-[3px] rounded-full bg-[#2A2B31]"></span>
+</div>
+<span class="flex h-[18px] w-[18px] items-center justify-center rounded-full border-[1.5px] border-[#2A2B31]">
+<span class="h-[6px] w-[6px] rounded-full border-[1.5px] border-[#2A2B31]"></span>
+</span>
+</div>
+</div>
+</header>
+<!-- 主滚动区 -->
+<main class="min-h-0 flex-1 overflow-y-auto overflow-x-hidden px-4 pb-5 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<!-- 商品主视觉 -->
+<section class="relative mt-1.5 overflow-hidden rounded-[20px] bg-gradient-to-br from-[#FFE9CC] via-[#FFD5A2] to-[#FFB672] p-4 shadow-[0_10px_24px_-16px_rgba(244,81,30,0.9)]">
+<span class="pointer-events-none absolute -right-8 -top-8 h-[110px] w-[110px] rounded-full bg-white/25"></span>
+<span class="pointer-events-none absolute right-4 top-3 text-[64px] leading-none opacity-90">🍗</span>
+<div class="relative">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="rounded-full bg-white/85 px-2 py-[3px] text-[9px] font-semibold text-[#C2410C]">外卖拼单</span>
+<span class="rounded-full bg-[#FF5722] px-2 py-[3px] text-[9px] font-semibold text-white">还差 1 人成团</span>
+</div>
+<h2 class="mt-2 max-w-[200px] text-[17px] font-bold leading-[1.35] text-[#4A2108]">肯德基疯狂星期四<br/>黄金鸡块（20块）</h2>
+<div class="mt-2.5 flex items-center gap-3 text-[10px] text-[#7A3D12]">
+<span class="flex items-center gap-1"><iconify-icon class="text-[13px]" icon="material-symbols:storefront"></iconify-icon>美团外卖</span>
+<span class="flex items-center gap-1"><iconify-icon class="text-[13px]" icon="material-symbols:shopping-bag"></iconify-icon>合计 ¥29.90</span>
+</div>
+</div>
+</section>
+<!-- 倒计时 -->
+<section class="mt-3 rounded-[18px] bg-[#1C1D22] p-3.5 text-white shadow-[0_8px_20px_-12px_rgba(28,29,34,0.8)]">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5 text-[11px] text-white/70">
+<iconify-icon class="text-[14px] text-[#FFB27A]" icon="material-symbols:timer"></iconify-icon>
+            距截止还有
+          </span>
+<span class="flex items-center gap-1 rounded-full bg-white/10 px-2 py-[3px] text-[9px] text-white/80">
+<span class="h-[4px] w-[4px] rounded-full bg-[#16C098]"></span>12:00 前成团
+          </span>
+</div>
+<div class="mt-2 flex items-end gap-1.5">
+<div class="rounded-[10px] bg-white/10 px-2.5 py-1.5 text-center">
+<span class="text-[24px] font-bold leading-none tabular-nums" id="cdMin">15</span>
+<span class="mt-0.5 block text-[8px] text-white/50">分</span>
+</div>
+<span class="pb-4 text-[18px] font-bold text-[#FFB27A]">:</span>
+<div class="rounded-[10px] bg-white/10 px-2.5 py-1.5 text-center">
+<span class="text-[24px] font-bold leading-none tabular-nums" id="cdSec">23</span>
+<span class="mt-0.5 block text-[8px] text-white/50">秒</span>
+</div>
+<div class="ml-auto text-right">
+<p class="text-[10px] text-white/50">成团后自动通知</p>
+<p class="mt-0.5 text-[11px] font-medium text-[#FFB27A]">东区3栋 1F 大厅自提</p>
+</div>
+</div>
+<div class="mt-2.5 h-[4px] overflow-hidden rounded-full bg-white/10">
+<div class="h-full w-[70%] rounded-full bg-gradient-to-r from-[#FFB27A] to-[#FF6B2C] transition-all duration-1000" id="timeBar"></div>
+</div>
+</section>
+<!-- 发起人 -->
+<section class="mt-3 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<div class="flex items-center gap-2.5">
+<span class="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#FFB27A] to-[#FF6B2C] text-[15px] font-bold text-white ring-2 ring-[#FFF4EC]">林</span>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<p class="truncate text-[13px] font-semibold">林小满</p>
+<span class="rounded-full bg-[#FFF4EC] px-1.5 py-[1px] text-[9px] font-medium text-[#F4511E]">发起人</span>
+</div>
+<p class="mt-0.5 flex items-center gap-2 text-[10px] text-[#9AA0AA]">
+<span class="flex items-center gap-0.5 rounded-full bg-[#EAF9F3] px-1.5 py-[1px] text-[#0A7A5F]">
+<iconify-icon class="text-[10px]" icon="material-symbols:verified"></iconify-icon>信用 98
+              </span>
+<span>东区3栋 12F · 已发起 12 单</span>
+</p>
+</div>
+<a class="flex items-center gap-0.5 rounded-full border border-[#E9EAF0] px-2.5 py-[5px] text-[10px] text-[#6B7280] active:bg-[#F7F8FA]" href="profile.html">
+            主页<iconify-icon class="text-[12px]" icon="material-symbols:chevron-right"></iconify-icon>
+</a>
+</div>
+<p class="mt-2.5 rounded-[11px] bg-[#FAFAFC] px-3 py-2 text-[11px] leading-relaxed text-[#6B7280]">
+          备注：12:00 一起在 1F 大厅取，鸡块要现炸的，拼满就下单～
+        </p>
+</section>
+<!-- 进度 -->
+<section class="mt-3 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<div class="flex items-end justify-between">
+<h3 class="text-[13px] font-semibold">拼单进度</h3>
+<p class="text-[11px] text-[#6B7280]">已拼 <span class="text-[15px] font-bold text-[#FF5722]" id="joinedCount">2</span><span class="text-[11px]">/3 人</span></p>
+</div>
+<div class="mt-2 h-[8px] overflow-hidden rounded-full bg-[#F1F2F6]">
+<div class="h-full w-2/3 rounded-full bg-gradient-to-r from-[#FFB27A] to-[#FF6B2C] transition-all duration-500" id="progressBar"></div>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<div class="flex items-center">
+<span class="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-gradient-to-br from-[#FFB27A] to-[#FF6B2C] text-[11px] font-bold text-white ring-2 ring-white">林</span>
+<span class="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-gradient-to-br from-[#5FD7B4] to-[#10A981] text-[11px] font-bold text-white ring-2 ring-white -ml-2">周</span>
+<span class="hidden h-[32px] w-[32px] items-center justify-center rounded-full bg-gradient-to-br from-[#7FB6FF] to-[#2F6FE4] text-[11px] font-bold text-white ring-2 ring-white -ml-2" id="youAvatar">我</span>
+<span class="ml-2 flex h-[32px] w-[32px] items-center justify-center rounded-full border border-dashed border-[#D5D8DF] text-[#B3B8C2]">
+<iconify-icon class="text-[15px]" icon="material-symbols:add"></iconify-icon>
+</span>
+</div>
+<div class="ml-auto text-right">
+<p class="text-[10px] text-[#9AA0AA]">当前人均</p>
+<p class="text-[13px] font-bold text-[#F4511E]">¥<span id="perPrice">14.95</span></p>
+</div>
+</div>
+<p class="mt-2 text-[10px] text-[#9AA0AA]" id="progressTip">再拼 1 人最低到 ¥9.97/人，成团后按实际人数均摊</p>
+</section>
+<!-- 商品明细 -->
+<section class="mt-3 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<h3 class="text-[13px] font-semibold">商品明细</h3>
+<div class="mt-2.5 space-y-2 text-[11px]">
+<div class="flex items-center justify-between">
+<span class="text-[#6B7280]">黄金鸡块（20块）</span>
+<span class="font-medium">¥22.00</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[#6B7280]">原味鸡（1块）</span>
+<span class="font-medium">¥7.90</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[#6B7280]">打包费</span>
+<span class="font-medium">¥1.00</span>
+</div>
+<div class="flex items-center justify-between text-[#0A7A5F]">
+<span class="flex items-center gap-1"><iconify-icon class="text-[13px]" icon="material-symbols:local-shipping"></iconify-icon>配送费（同楼栋自提）</span>
+<span class="font-medium">已免 ¥4.00</span>
+</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between border-t border-dashed border-[#EDEEF2] pt-2.5">
+<span class="text-[11px] text-[#6B7280]">合计金额</span>
+<span class="text-[14px] font-bold">¥29.90</span>
+</div>
+</section>
+<!-- 提示 -->
+<section class="mt-3 flex items-start gap-2 rounded-[18px] bg-[#EAF9F3] p-3.5 ring-1 ring-[#CDEFE2]">
+<iconify-icon class="mt-[1px] text-[17px] text-[#0A7A5F]" icon="material-symbols:verified-user"></iconify-icon>
+<div class="text-[10px] leading-relaxed text-[#0A7A5F]">
+<p class="text-[11px] font-semibold">同楼栋自提，免配送费</p>
+<p class="mt-0.5 text-[#2E7D64]">仅东区3栋同学可参与，成团后系统推送取货码；未成团自动原路退款。</p>
+</div>
+</section>
+<!-- 提醒 -->
+<section class="mt-3 flex items-center justify-between rounded-[18px] bg-white px-3.5 py-3 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<span class="flex items-center gap-2 text-[11px] text-[#6B7280]">
+<iconify-icon class="text-[16px] text-[#FF6B2C]" icon="material-symbols:notifications-active"></iconify-icon>
+          成团 / 到期提醒
+        </span>
+<button class="relative h-[22px] w-[40px] rounded-full bg-[#FF6B2C] transition data-[state=off]:bg-[#DFE2E8]" data-state="on" id="remindToggle" type="button">
+<span class="absolute left-[19px] top-[2px] h-[18px] w-[18px] rounded-full bg-white shadow transition-all data-[state=off]:left-[2px]" data-knob=""></span>
+</button>
+</section>
+</main>
+<!-- 底部操作栏 -->
+<div class="shrink-0 border-t border-[#E9EAF0] bg-white px-4 pb-3 pt-2.5">
+<div class="flex items-center gap-2.5">
+<a class="flex w-[52px] flex-col items-center gap-0.5 text-[#6B7280]" href="profile.html">
+<iconify-icon class="text-[20px]" icon="material-symbols:chat-bubble"></iconify-icon>
+<span class="text-[9px]">联系楼长</span>
+</a>
+<button class="flex-1 rounded-[14px] bg-gradient-to-r from-[#FF8A4C] to-[#F4511E] py-3.5 text-[15px] font-semibold text-white shadow-[0_10px_22px_-10px_rgba(244,81,30,0.9)] transition active:scale-[0.985] disabled:from-[#16C098] disabled:to-[#0C8C6E] disabled:shadow-none" id="joinBtn" type="button">
+          立即加入拼单 <span class="text-[11px] font-normal opacity-90">· 预付 ¥14.95</span>
+</button>
+</div>
+</div>
+<!-- 加入成功弹窗 -->
+<div class="absolute inset-0 z-50 hidden items-center justify-center bg-black/40 px-7" id="successModal">
+<div class="w-full rounded-[22px] bg-white p-5 text-center shadow-[0_20px_60px_rgba(0,0,0,0.25)]">
+<div class="mx-auto flex h-[56px] w-[56px] items-center justify-center rounded-full bg-[#EAF9F3]">
+<iconify-icon class="text-[34px] text-[#16C098]" icon="material-symbols:check-circle"></iconify-icon>
+</div>
+<h3 class="mt-3 text-[17px] font-bold">拼单成功，请等待成团</h3>
+<p class="mt-1.5 text-[11px] leading-relaxed text-[#6B7280]">
+          已加入林小满的拼单，当前 <span class="font-semibold text-[#F4511E]" id="modalProgress">3/3 人</span> 已满员<br/>
+          取货码将在 12:00 前推送到「我的拼单」
+        </p>
+<div class="mt-3 rounded-[12px] bg-[#FAFAFC] px-3 py-2 text-left text-[10px] text-[#6B7280]">
+<span class="flex items-center justify-between"><span>自提点</span><span class="font-medium text-[#1C1D22]">东区3栋 1F 大厅</span></span>
+<span class="mt-1 flex items-center justify-between"><span>应付金额</span><span class="font-medium text-[#F4511E]">¥9.97（多退少补）</span></span>
+</div>
+<div class="mt-4 flex gap-2">
+<button class="flex-1 rounded-[12px] border border-[#E9EAF0] bg-white py-2.5 text-[13px] font-medium text-[#6B7280]" id="modalClose" type="button">留在本页</button>
+<a class="flex-1 rounded-[12px] bg-[#FF6B2C] py-2.5 text-[13px] font-semibold text-white" href="profile.html">查看我的拼单</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+    (function () {
+      const total = 3;
+      let joined = 2;
+      const joinBtn = document.getElementById('joinBtn');
+      const joinedCount = document.getElementById('joinedCount');
+      const progressBar = document.getElementById('progressBar');
+      const perPrice = document.getElementById('perPrice');
+      const progressTip = document.getElementById('progressTip');
+      const youAvatar = document.getElementById('youAvatar');
+      const successModal = document.getElementById('successModal');
+      const modalClose = document.getElementById('modalClose');
+      const modalProgress = document.getElementById('modalProgress');
+      const remindToggle = document.getElementById('remindToggle');
+      const remindKnob = remindToggle.querySelector('[data-knob]');
+
+      const totalAmount = 29.90;
+
+      function syncState() {
+        joinedCount.textContent = String(joined);
+        progressBar.style.width = (joined / total * 100) + '%';
+        perPrice.textContent = (totalAmount / joined).toFixed(2);
+        if (joined >= total) {
+          joinBtn.disabled = true;
+          joinBtn.innerHTML = '已加入 · 等待成团';
+          joinBtn.classList.remove('active:scale-[0.985]');
+          youAvatar.classList.remove('hidden');
+          youAvatar.classList.add('flex');
+          progressTip.textContent = '本单已成团，取货码将在 12:00 前推送到「我的拼单」';
+        } else {
+          const remain = total - joined;
+          progressTip.textContent = '再拼 ' + remain + ' 人最低到 ¥' + (totalAmount / total).toFixed(2) + '/人，成团后按实际人数均摊';
+        }
+      }
+
+      const joinedFlag = (function () {
+        try {
+          return localStorage.getItem('cgb_kfc_joined') === '1';
+        } catch (error) {
+          return false;
+        }
+      })();
+
+      if (joinedFlag) {
+        joined = 3;
+      }
+
+      joinBtn.addEventListener('click', function () {
+        if (joined >= total) return;
+        joined = joined + 1;
+        try {
+          localStorage.setItem('cgb_kfc_joined', '1');
+        } catch (error) {
+          // 忽略存储限制
+        }
+        syncState();
+        modalProgress.textContent = joined + '/' + total + ' 人';
+        successModal.classList.remove('hidden');
+        successModal.classList.add('flex');
+      });
+
+      modalClose.addEventListener('click', function () {
+        successModal.classList.add('hidden');
+        successModal.classList.remove('flex');
+      });
+
+      successModal.addEventListener('click', function (event) {
+        if (event.target === successModal) {
+          successModal.classList.add('hidden');
+          successModal.classList.remove('flex');
+        }
+      });
+
+      remindToggle.addEventListener('click', function () {
+        const isOn = remindToggle.dataset.state === 'on';
+        const next = isOn ? 'off' : 'on';
+        remindToggle.dataset.state = next;
+        remindKnob.dataset.state = next;
+      });
+
+      // 倒计时：15 分 23 秒开始真实跳动
+      let remainSeconds = 15 * 60 + 23;
+      const totalSeconds = remainSeconds;
+      const cdMin = document.getElementById('cdMin');
+      const cdSec = document.getElementById('cdSec');
+      const timeBar = document.getElementById('timeBar');
+
+      function pad(value) {
+        return value < 10 ? '0' + value : String(value);
+      }
+
+      function renderCountdown() {
+        const minutes = Math.floor(remainSeconds / 60);
+        const seconds = remainSeconds % 60;
+        cdMin.textContent = pad(minutes);
+        cdSec.textContent = pad(seconds);
+        timeBar.style.width = Math.max(3, remainSeconds / totalSeconds * 100) + '%';
+      }
+
+      renderCountdown();
+      const timer = window.setInterval(function () {
+        if (remainSeconds <= 0) {
+          window.clearInterval(timer);
+          cdMin.textContent = '00';
+          cdSec.textContent = '00';
+          return;
+        }
+        remainSeconds -= 1;
+        renderCountdown();
+      }, 1000);
+
+      syncState();
+    })();
+  </script>
+</body>
+</html>

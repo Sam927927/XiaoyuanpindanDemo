@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="w-full h-full overflow-hidden" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>校园拼单搭子 · 我的</title>
+<script src="https://modao.cc/agent-py/static/source/js/tailwindcss.js"></script>
+<script src="https://modao.cc/agent-py/static/source/js/iconify-icon.min.js"></script>
+</head>
+<body class="w-full h-full m-0 overflow-hidden flex items-center justify-center bg-[#E8EAEF] text-[#1C1D22] antialiased">
+<div class="relative flex h-full w-full max-w-[393px] max-h-[852px] flex-col overflow-hidden bg-[#F5F6F8] sm:rounded-[30px] sm:shadow-[0_26px_70px_rgba(23,26,35,0.25)]">
+<!-- 状态栏 -->
+<div class="flex h-[44px] shrink-0 items-end justify-between px-6 pb-[7px] text-white">
+<span class="text-[14px] font-semibold tracking-tight">9:41</span>
+<div class="flex items-center gap-[6px]">
+<iconify-icon class="text-[15px]" icon="material-symbols:signal-cellular-alt"></iconify-icon>
+<iconify-icon class="text-[15px]" icon="material-symbols:wifi"></iconify-icon>
+<iconify-icon class="text-[16px]" icon="material-symbols:battery-full"></iconify-icon>
+</div>
+</div>
+<!-- 顶部（随滚动固定为白色背景过渡） -->
+<header class="shrink-0 bg-gradient-to-b from-[#FF6B2C] to-[#FF7F42] px-4 pb-0">
+<div class="flex items-center justify-between">
+<h1 class="text-[17px] font-bold text-white">我的</h1>
+<div class="flex items-center gap-2">
+<button aria-label="设置" class="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-white/20 text-white active:opacity-70" type="button">
+<iconify-icon class="text-[17px]" icon="material-symbols:settings"></iconify-icon>
+</button>
+<div class="flex h-[30px] w-[86px] shrink-0 items-center justify-between rounded-full border border-white/25 bg-white/15 px-3">
+<div class="flex items-center gap-[3px]">
+<span class="h-[3px] w-[3px] rounded-full bg-white"></span>
+<span class="h-[3px] w-[3px] rounded-full bg-white"></span>
+<span class="h-[3px] w-[3px] rounded-full bg-white"></span>
+</div>
+<span class="flex h-[18px] w-[18px] items-center justify-center rounded-full border-[1.5px] border-white">
+<span class="h-[6px] w-[6px] rounded-full border-[1.5px] border-white"></span>
+</span>
+</div>
+</div>
+</div>
+<!-- 用户信息 -->
+<div class="mt-3 flex items-center gap-3">
+<div class="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-full bg-white text-[22px] font-bold text-[#FF6B2C] ring-[3px] ring-white/35">我</div>
+<div class="min-w-0 flex-1 text-white">
+<div class="flex items-center gap-1.5">
+<p class="truncate text-[17px] font-bold">苏晓棠</p>
+<span class="flex items-center gap-0.5 rounded-full bg-white/20 px-1.5 py-[1px] text-[9px]">
+<iconify-icon class="text-[11px]" icon="material-symbols:workspace-premium"></iconify-icon>楼栋活跃
+            </span>
+</div>
+<div class="mt-1 flex items-center gap-1 text-[11px]">
+<span class="tracking-[1px] text-[#FFE28A]">⭐⭐⭐⭐⭐</span>
+<span class="text-white/85">信用分 <span class="font-semibold text-white">100</span> 分</span>
+</div>
+<p class="mt-1 flex items-center gap-1 text-[10px] text-white/80">
+<iconify-icon class="text-[12px]" icon="material-symbols:location-on"></iconify-icon>
+            东区3栋 12F 1203 · 已加入 3 个月
+          </p>
+</div>
+<iconify-icon class="text-[20px] text-white/70" icon="material-symbols:chevron-right"></iconify-icon>
+</div>
+<!-- 数据条 -->
+<div class="mt-3 grid grid-cols-3 rounded-t-[18px] bg-white/15 py-2.5">
+<div class="text-center text-white">
+<p class="text-[16px] font-bold leading-none">18</p>
+<p class="mt-1 text-[9px] text-white/75">参与拼单</p>
+</div>
+<div class="border-x border-white/20 text-center text-white">
+<p class="text-[16px] font-bold leading-none">7</p>
+<p class="mt-1 text-[9px] text-white/75">发起拼单</p>
+</div>
+<div class="text-center text-white">
+<p class="text-[16px] font-bold leading-none">¥<span>86.4</span></p>
+<p class="mt-1 text-[9px] text-white/75">累计省下</p>
+</div>
+</div>
+</header>
+<!-- 主滚动区 -->
+<main class="min-h-0 flex-1 overflow-y-auto overflow-x-hidden bg-[#F5F6F8] px-4 pb-24 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<!-- 菜单 -->
+<section class="mt-3 rounded-[18px] bg-white p-1.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<button class="flex w-full items-center gap-2.5 rounded-[13px] px-2.5 py-2.5 text-left transition data-[state=active]:bg-[#FFF4EC]" data-panel="joined" data-state="active" type="button">
+<span class="flex h-[32px] w-[32px] items-center justify-center rounded-[10px] bg-[#FFF0E5]">
+<iconify-icon class="text-[18px] text-[#F4511E]" icon="material-symbols:groups"></iconify-icon>
+</span>
+<span class="min-w-0 flex-1">
+<span class="block text-[13px] font-medium">我的拼单</span>
+<span class="block text-[10px] text-[#9AA0AA]">我参与、正在进行的拼单</span>
+</span>
+<span class="rounded-full bg-[#FF6B2C] px-1.5 py-[1px] text-[9px] font-semibold text-white">2</span>
+<iconify-icon class="text-[17px] text-[#C0C4CC]" icon="material-symbols:chevron-right"></iconify-icon>
+</button>
+<button class="flex w-full items-center gap-2.5 rounded-[13px] px-2.5 py-2.5 text-left transition data-[state=active]:bg-[#FFF4EC]" data-panel="published" data-state="idle" type="button">
+<span class="flex h-[32px] w-[32px] items-center justify-center rounded-[10px] bg-[#FFF4E0]">
+<iconify-icon class="text-[18px] text-[#C77700]" icon="material-symbols:campaign"></iconify-icon>
+</span>
+<span class="min-w-0 flex-1">
+<span class="block text-[13px] font-medium">我的发布</span>
+<span class="block text-[10px] text-[#9AA0AA]">查看进度、催人、提前关闭</span>
+</span>
+<span class="rounded-full bg-[#F1F2F6] px-1.5 py-[1px] text-[9px] font-semibold text-[#6B7280]">1</span>
+<iconify-icon class="text-[17px] text-[#C0C4CC]" icon="material-symbols:chevron-right"></iconify-icon>
+</button>
+<button class="flex w-full items-center gap-2.5 rounded-[13px] px-2.5 py-2.5 text-left transition data-[state=active]:bg-[#FFF4EC]" data-panel="history" data-state="idle" type="button">
+<span class="flex h-[32px] w-[32px] items-center justify-center rounded-[10px] bg-[#EEF5FF]">
+<iconify-icon class="text-[18px] text-[#2F6FE4]" icon="material-symbols:history"></iconify-icon>
+</span>
+<span class="min-w-0 flex-1">
+<span class="block text-[13px] font-medium">历史记录</span>
+<span class="block text-[10px] text-[#9AA0AA]">已完成 / 已取消的拼单</span>
+</span>
+<iconify-icon class="text-[17px] text-[#C0C4CC]" icon="material-symbols:chevron-right"></iconify-icon>
+</button>
+<button class="flex w-full items-center gap-2.5 rounded-[13px] px-2.5 py-2.5 text-left transition data-[state=active]:bg-[#FFF4EC]" data-panel="host" data-state="idle" type="button">
+<span class="flex h-[32px] w-[32px] items-center justify-center rounded-[10px] bg-[#EAF9F3]">
+<iconify-icon class="text-[18px] text-[#0A7A5F]" icon="material-symbols:support-agent"></iconify-icon>
+</span>
+<span class="min-w-0 flex-1">
+<span class="block text-[13px] font-medium">联系楼长</span>
+<span class="block text-[10px] text-[#9AA0AA]">3栋楼长 陈嘉树 · 在线</span>
+</span>
+<span class="flex items-center gap-1 text-[9px] text-[#16C098]">
+<span class="h-[5px] w-[5px] rounded-full bg-[#16C098]"></span>在线
+          </span>
+<iconify-icon class="text-[17px] text-[#C0C4CC]" icon="material-symbols:chevron-right"></iconify-icon>
+</button>
+</section>
+<!-- 面板：我的拼单 -->
+<section class="mt-3" data-view="joined">
+<div class="flex items-center justify-between">
+<h2 class="text-[14px] font-bold">我的拼单</h2>
+<a class="flex items-center gap-0.5 text-[10px] text-[#FF6B2C]" href="index.html">去大厅<iconify-icon class="text-[12px]" icon="material-symbols:chevron-right"></iconify-icon></a>
+</div>
+<article class="mt-2 rounded-[16px] bg-white p-3 shadow-[0_2px_10px_rgba(23,26,35,0.05)]">
+<div class="flex items-start gap-2.5">
+<span class="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[12px] bg-[#FFF0DC] text-[20px]">🍗</span>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between gap-2">
+<p class="truncate text-[13px] font-semibold">肯德基疯狂星期四黄金鸡块</p>
+<span class="shrink-0 rounded-full bg-[#FFF4EC] px-1.5 py-[2px] text-[9px] font-medium text-[#F4511E]" id="joinedTag">拼单中</span>
+</div>
+<p class="mt-1 text-[10px] text-[#9AA0AA]">林小满发起 · 东区3栋 12F</p>
+<div class="mt-2 flex items-center justify-between text-[10px]">
+<span class="text-[#6B7280]">进度 <span id="joinedProgress">2/3</span> 人</span>
+<span class="text-[#9AA0AA]">12:00 截止</span>
+</div>
+<div class="mt-1.5 h-[5px] overflow-hidden rounded-full bg-[#F1F2F6]">
+<div class="h-full w-2/3 rounded-full bg-gradient-to-r from-[#FFB27A] to-[#FF6B2C]" id="joinedBar"></div>
+</div>
+</div>
+</div>
+<div class="mt-2.5 flex justify-end gap-2">
+<a class="rounded-full border border-[#E9EAF0] px-3 py-[5px] text-[10px] text-[#6B7280]" href="detail.html">查看详情</a>
+<a class="rounded-full bg-[#FF6B2C] px-3 py-[5px] text-[10px] font-semibold text-white" href="detail.html" id="joinedAction">继续拼人</a>
+</div>
+</article>
+<article class="mt-2 rounded-[16px] bg-white p-3 shadow-[0_2px_10px_rgba(23,26,35,0.05)]">
+<div class="flex items-start gap-2.5">
+<span class="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[12px] bg-[#E4F7EF] text-[20px]">☕</span>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between gap-2">
+<p class="truncate text-[13px] font-semibold">瑞幸生椰拿铁 第二杯半价</p>
+<span class="shrink-0 rounded-full bg-[#EAF9F3] px-1.5 py-[2px] text-[9px] font-medium text-[#0A7A5F]">已成团</span>
+</div>
+<p class="mt-1 text-[10px] text-[#9AA0AA]">周雨森发起 · 取货码 <span class="font-semibold text-[#0A7A5F]">#3072</span></p>
+<div class="mt-2 flex items-center justify-between text-[10px]">
+<span class="text-[#6B7280]">进度 4/4 人 · 人均 ¥14.50</span>
+<span class="text-[#9AA0AA]">今天 18:30</span>
+</div>
+<div class="mt-1.5 h-[5px] overflow-hidden rounded-full bg-[#F1F2F6]">
+<div class="h-full w-full rounded-full bg-[#16C098]"></div>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- 面板：我的发布 -->
+<section class="mt-3 hidden" data-view="published">
+<h2 class="text-[14px] font-bold">我的发布</h2>
+<article class="mt-2 rounded-[16px] bg-white p-3 shadow-[0_2px_10px_rgba(23,26,35,0.05)]">
+<div class="flex items-start gap-2.5">
+<span class="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[12px] bg-[#EAF2FF] text-[20px]">🍉</span>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between gap-2">
+<p class="truncate text-[13px] font-semibold">永辉超市麒麟西瓜拼单</p>
+<span class="shrink-0 rounded-full bg-[#FFF4EC] px-1.5 py-[2px] text-[9px] font-medium text-[#F4511E]">还差 1 人</span>
+</div>
+<p class="mt-1 text-[10px] text-[#9AA0AA]">我发起 · 目标 5 人 · 20:00 截止</p>
+<div class="mt-2 grid grid-cols-3 gap-1.5 text-center">
+<div class="rounded-[9px] bg-[#FAFAFC] py-1.5">
+<p class="text-[13px] font-bold text-[#1C1D22]">4/5</p>
+<p class="text-[9px] text-[#9AA0AA]">已拼人数</p>
+</div>
+<div class="rounded-[9px] bg-[#FAFAFC] py-1.5">
+<p class="text-[13px] font-bold text-[#1C1D22]">¥15.80</p>
+<p class="text-[9px] text-[#9AA0AA]">当前人均</p>
+</div>
+<div class="rounded-[9px] bg-[#FAFAFC] py-1.5">
+<p class="text-[13px] font-bold text-[#16C098]">3</p>
+<p class="text-[9px] text-[#9AA0AA]">催单次数</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-2.5 flex justify-end gap-2">
+<button class="rounded-full border border-[#FFD3B8] px-3 py-[5px] text-[10px] text-[#F4511E]" id="remindBtn" type="button">催一催楼友</button>
+<a class="rounded-full bg-[#FF6B2C] px-3 py-[5px] text-[10px] font-semibold text-white" href="detail.html">查看详情</a>
+</div>
+</article>
+<article class="mt-2 rounded-[16px] bg-white p-3 opacity-75 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<div class="flex items-start gap-2.5">
+<span class="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[12px] bg-[#F3EFFF] text-[20px]">📦</span>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between gap-2">
+<p class="truncate text-[13px] font-semibold">帮忙取快递送到 12F 门口</p>
+<span class="shrink-0 rounded-full bg-[#F1F2F6] px-1.5 py-[2px] text-[9px] font-medium text-[#6B7280]">已取消</span>
+</div>
+<p class="mt-1 text-[10px] text-[#9AA0AA]">我发起 · 昨天 15:00 到期未成团</p>
+</div>
+</div>
+</article>
+</section>
+<!-- 面板：历史记录 -->
+<section class="mt-3 hidden" data-view="history">
+<div class="flex items-center justify-between">
+<h2 class="text-[14px] font-bold">历史记录</h2>
+<span class="text-[10px] text-[#9AA0AA]">近 30 天 · 共 6 单</span>
+</div>
+<div class="mt-2 flex gap-1.5 overflow-x-auto pb-0.5 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<span class="shrink-0 rounded-full bg-[#FF6B2C] px-3 py-[5px] text-[10px] font-medium text-white">本周</span>
+<span class="shrink-0 rounded-full bg-white px-3 py-[5px] text-[10px] text-[#6B7280]">本月</span>
+<span class="shrink-0 rounded-full bg-white px-3 py-[5px] text-[10px] text-[#6B7280]">上月</span>
+</div>
+<div class="mt-2 divide-y divide-[#F2F3F6] rounded-[16px] bg-white px-3 shadow-[0_2px_10px_rgba(23,26,35,0.05)]">
+<div class="flex items-center gap-2.5 py-3">
+<span class="flex h-[34px] w-[34px] items-center justify-center rounded-[10px] bg-[#FFF7E8] text-[17px]">🍔</span>
+<div class="min-w-0 flex-1">
+<p class="truncate text-[12px] font-medium">麦当劳 1+1 随心配</p>
+<p class="mt-0.5 text-[9px] text-[#9AA0AA]">11月4日 13:12 · 2人成团</p>
+</div>
+<span class="text-[11px] font-semibold text-[#F4511E]">¥12.90</span>
+</div>
+<div class="flex items-center gap-2.5 py-3">
+<span class="flex h-[34px] w-[34px] items-center justify-center rounded-[10px] bg-[#EAF9F3] text-[17px]">☕</span>
+<div class="min-w-0 flex-1">
+<p class="truncate text-[12px] font-medium">瑞幸生椰拿铁第二杯半价</p>
+<p class="mt-0.5 text-[9px] text-[#9AA0AA]">11月2日 18:40 · 4人成团</p>
+</div>
+<span class="text-[11px] font-semibold text-[#F4511E]">¥14.50</span>
+</div>
+<div class="flex items-center gap-2.5 py-3">
+<span class="flex h-[34px] w-[34px] items-center justify-center rounded-[10px] bg-[#FFF3E0] text-[17px]">🍗</span>
+<div class="min-w-0 flex-1">
+<p class="truncate text-[12px] font-medium">肯德基黄金鸡块（20块）</p>
+<p class="mt-0.5 text-[9px] text-[#9AA0AA]">10月28日 12:05 · 3人成团</p>
+</div>
+<span class="text-[11px] font-semibold text-[#F4511E]">¥9.97</span>
+</div>
+<div class="flex items-center gap-2.5 py-3">
+<span class="flex h-[34px] w-[34px] items-center justify-center rounded-[10px] bg-[#F1F2F6] text-[17px]">🍢</span>
+<div class="min-w-0 flex-1">
+<p class="truncate text-[12px] font-medium">罗森关东煮夜宵拼单</p>
+<p class="mt-0.5 text-[9px] text-[#9AA0AA]">10月25日 22:10 · 未成团自动退款</p>
+</div>
+<span class="text-[11px] text-[#9AA0AA]">已退款</span>
+</div>
+</div>
+<p class="mt-2 flex items-center justify-center gap-1 text-[9px] text-[#B0B5BF]">
+<iconify-icon class="text-[11px]" icon="material-symbols:info"></iconify-icon>历史记录仅保留最近 30 天
+        </p>
+</section>
+<!-- 面板：联系楼长 -->
+<section class="mt-3 hidden" data-view="host">
+<h2 class="text-[14px] font-bold">联系楼长</h2>
+<div class="mt-2 overflow-hidden rounded-[18px] bg-white shadow-[0_2px_10px_rgba(23,26,35,0.05)]">
+<div class="flex items-center gap-3 bg-gradient-to-r from-[#EAF9F3] to-white p-3.5">
+<span class="flex h-[46px] w-[46px] items-center justify-center rounded-full bg-gradient-to-br from-[#5FD7B4] to-[#0C8C6E] text-[16px] font-bold text-white">陈</span>
+<div class="min-w-0 flex-1">
+<p class="flex items-center gap-1.5 text-[13px] font-semibold">陈嘉树
+                <span class="rounded-full bg-white px-1.5 py-[1px] text-[9px] font-medium text-[#0A7A5F]">楼长</span>
+</p>
+<p class="mt-0.5 text-[10px] text-[#9AA0AA]">负责东区3栋 · 已处理 126 次求助</p>
+<p class="mt-1 flex items-center gap-1 text-[9px] text-[#16C098]">
+<span class="h-[5px] w-[5px] rounded-full bg-[#16C098]"></span>当前在线 · 平均 5 分钟回复
+              </p>
+</div>
+</div>
+<div class="divide-y divide-[#F2F3F6] px-3">
+<button class="flex w-full items-center gap-2.5 py-3 text-left active:opacity-60" data-host-action="电话" type="button">
+<span class="flex h-[30px] w-[30px] items-center justify-center rounded-[9px] bg-[#FFF0E5]">
+<iconify-icon class="text-[16px] text-[#F4511E]" icon="material-symbols:call"></iconify-icon>
+</span>
+<span class="flex-1 text-[12px]">拨打楼长电话</span>
+<span class="text-[10px] text-[#9AA0AA]">0000-3栋1203</span>
+<iconify-icon class="text-[15px] text-[#C0C4CC]" icon="material-symbols:chevron-right"></iconify-icon>
+</button>
+<button class="flex w-full items-center gap-2.5 py-3 text-left active:opacity-60" data-host-action="报修" type="button">
+<span class="flex h-[30px] w-[30px] items-center justify-center rounded-[9px] bg-[#EEF5FF]">
+<iconify-icon class="text-[16px] text-[#2F6FE4]" icon="material-symbols:handyman"></iconify-icon>
+</span>
+<span class="flex-1 text-[12px]">报修 / 反馈问题</span>
+<iconify-icon class="text-[15px] text-[#C0C4CC]" icon="material-symbols:chevron-right"></iconify-icon>
+</button>
+<button class="flex w-full items-center gap-2.5 py-3 text-left active:opacity-60" data-host-action="自提点" type="button">
+<span class="flex h-[30px] w-[30px] items-center justify-center rounded-[9px] bg-[#EAF9F3]">
+<iconify-icon class="text-[16px] text-[#0A7A5F]" icon="material-symbols:inventory-2"></iconify-icon>
+</span>
+<span class="flex-1 text-[12px]">1F 自提点柜子打不开</span>
+<iconify-icon class="text-[15px] text-[#C0C4CC]" icon="material-symbols:chevron-right"></iconify-icon>
+</button>
+</div>
+</div>
+<div class="mt-3 rounded-[16px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<p class="text-[12px] font-semibold">楼栋公告</p>
+<p class="mt-1.5 text-[10px] leading-relaxed text-[#6B7280]">本周六 9:00–11:00 电梯检修，拼单自提请走消防通道楼梯；外卖统一放在 1F 西侧拼单架。</p>
+</div>
+</section>
+<!-- 信用分卡片 -->
+<section class="mt-3 rounded-[18px] bg-white p-3.5 shadow-[0_2px_10px_rgba(23,26,35,0.04)]">
+<div class="flex items-center justify-between">
+<h3 class="flex items-center gap-1.5 text-[13px] font-semibold">
+<iconify-icon class="text-[16px] text-[#FF6B2C]" icon="material-symbols:shield-person"></iconify-icon>
+            我的信用分
+          </h3>
+<span class="rounded-full bg-[#EAF9F3] px-2 py-[2px] text-[9px] font-medium text-[#0A7A5F]">优秀</span>
+</div>
+<div class="mt-2.5 flex items-center gap-3">
+<p class="text-[26px] font-bold leading-none text-[#1C1D22]">100<span class="ml-0.5 text-[11px] font-normal text-[#9AA0AA]">分</span></p>
+<div class="min-w-0 flex-1">
+<div class="h-[6px] overflow-hidden rounded-full bg-[#F1F2F6]">
+<div class="h-full w-full rounded-full bg-gradient-to-r from-[#5FD7B4] to-[#16C098]"></div>
+</div>
+<p class="mt-1.5 text-[9px] text-[#9AA0AA]">按时自提 +12 · 成团守约 +8 · 暂无违约记录</p>
+</div>
+</div>
+</section>
+<p class="mt-4 text-center text-[9px] text-[#B0B5BF]">校园拼单搭子 v1.2.0 · 仅限本校学生使用</p>
+</main>
+<!-- 底部 Tab -->
+<nav class="shrink-0 border-t border-[#E9EAF0] bg-white px-3 pb-2 pt-1.5">
+<div class="flex items-center justify-around">
+<a class="flex w-[74px] flex-col items-center gap-0.5 text-[#9AA0AA]" href="index.html">
+<iconify-icon class="text-[22px]" icon="material-symbols:home"></iconify-icon>
+<span class="text-[10px]">拼单大厅</span>
+</a>
+<a class="flex w-[74px] flex-col items-center gap-0.5 text-[#9AA0AA]" href="create.html">
+<iconify-icon class="text-[22px]" icon="material-symbols:add-circle"></iconify-icon>
+<span class="text-[10px]">发起拼单</span>
+</a>
+<a class="flex w-[74px] flex-col items-center gap-0.5 text-[#FF6B2C]" href="profile.html">
+<iconify-icon class="text-[22px]" icon="material-symbols:person"></iconify-icon>
+<span class="text-[10px] font-semibold">我的</span>
+</a>
+</div>
+</nav>
+<div class="pointer-events-none absolute bottom-[86px] left-1/2 z-50 hidden -translate-x-1/2 whitespace-nowrap rounded-full bg-[#1C1D22]/90 px-4 py-2 text-[11px] text-white" id="toast"></div>
+</div>
+<script>
+    (function () {
+      const menuButtons = Array.from(document.querySelectorAll('[data-panel]'));
+      const views = Array.from(document.querySelectorAll('[data-view]'));
+      const toast = document.getElementById('toast');
+      const remindBtn = document.getElementById('remindBtn');
+      let toastTimer = null;
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.remove('hidden');
+        if (toastTimer) window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(function () {
+          toast.classList.add('hidden');
+        }, 1800);
+      }
+
+      function switchPanel(name) {
+        menuButtons.forEach(function (button) {
+          button.dataset.state = button.dataset.panel === name ? 'active' : 'idle';
+        });
+        views.forEach(function (view) {
+          view.classList.toggle('hidden', view.dataset.view !== name);
+        });
+      }
+
+      menuButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          switchPanel(button.dataset.panel);
+        });
+      });
+
+      let joined = false;
+      try {
+        joined = localStorage.getItem('cgb_kfc_joined') === '1';
+      } catch (error) {
+        joined = false;
+      }
+
+      if (joined) {
+        const tag = document.getElementById('joinedTag');
+        const progress = document.getElementById('joinedProgress');
+        const bar = document.getElementById('joinedBar');
+        const action = document.getElementById('joinedAction');
+        if (tag) {
+          tag.textContent = '已成团';
+          tag.classList.remove('bg-[#FFF4EC]', 'text-[#F4511E]');
+          tag.classList.add('bg-[#EAF9F3]', 'text-[#0A7A5F]');
+        }
+        if (progress) progress.textContent = '3/3';
+        if (bar) bar.classList.remove('w-2/3');
+        if (bar) bar.classList.add('w-full');
+        if (action) action.textContent = '查看取货码';
+      }
+
+      if (remindBtn) {
+        remindBtn.addEventListener('click', function () {
+          showToast('已提醒 3 位楼友，成团就差一人啦');
+        });
+      }
+
+      Array.from(document.querySelectorAll('[data-host-action]')).forEach(function (button) {
+        button.addEventListener('click', function () {
+          showToast('已发起「' + button.dataset.hostAction + '」申请，楼长会尽快联系你');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
